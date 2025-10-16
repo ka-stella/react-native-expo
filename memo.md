@@ -1,4 +1,5 @@
 ### ディレクトリ構成
+
 ```
 prooject-root
   -src
@@ -12,4 +13,5 @@ prooject-root
     |--- redux
     |--- utils
 ```
+
 [参考](https://medium.com/@nitishprasad/react-native-folder-structure-e9ceab3150f3)

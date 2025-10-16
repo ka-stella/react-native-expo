@@ -34,7 +34,6 @@ module.exports = defineConfig([
     },
 
     rules: {
-      // ====== バグ防止（Error推奨）======
       // Promiseの放置を禁止し、非同期処理のバグを防ぐ
       "@typescript-eslint/no-floating-promises": [
         "error",
@@ -46,7 +45,6 @@ module.exports = defineConfig([
         { checksVoidReturn: { attributes: false } },
       ],
 
-      // ====== 品質向上（Warn推奨）======
       // 未使用の変数を警告。ただし、引数名が _ で始まる場合は無視
       "@typescript-eslint/no-unused-vars": [
         "warn",
@@ -76,8 +74,14 @@ module.exports = defineConfig([
           allowHigherOrderFunctions: true,
         },
       ],
+      "@typescript-eslint/consistent-type-imports": [
+        "warn",
+        {
+          prefer: "type-imports",
+          fixStyle: "inline-type-imports",
+        },
+      ],
 
-      // ====== スタイルの柔軟性（Off）======
       // 配列の型（T[] vs Array<T>）や、型の定義（interface vs type）を強制しない
       "@typescript-eslint/array-type": "off",
       "@typescript-eslint/consistent-type-definitions": "off",
@@ -85,6 +89,6 @@ module.exports = defineConfig([
   },
 
   {
-    ignores: ["dist/*", "node_modules/**","eslint.config.js"],
+    ignores: ["dist/*", "node_modules/**", "eslint.config.js"],
   },
 ]);
